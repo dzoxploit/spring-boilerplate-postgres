@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    url: postgresql://postgres:z3bcvuc@hcb8&@db.tcgotgqlqjtwhsahhdjp.supabase.co:5432/postgres
+    url: postgresql://postgres:{Your Password}@db.tcgotgqlqjtwhsahhdjp.supabase.co:5432/postgres
     hikari:
       pool-name:SpringBoilerplateStaterHikariPool
 
