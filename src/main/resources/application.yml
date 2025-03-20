@@ -1,0 +1,41 @@
+server:
+  http2:
+    enabled: true
+
+spring:
+  datasource:
+    url: postgresql://postgres:z3bcvuc@hcb8&@db.tcgotgqlqjtwhsahhdjp.supabase.co:5432/postgres
+    hikari:
+      pool-name:SpringBoilerplateStaterHikariPool
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+    jta:
+      enabled: false
+
+spring-doc:
+  show-actuator: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.springframework: INFO
+    package com.example.spring_boilerplate_stater: INFO
+
+jwt:
+  secretKey: secret
+  issuer: Didin Nur Yahya
+  expirationMinute:20
+
