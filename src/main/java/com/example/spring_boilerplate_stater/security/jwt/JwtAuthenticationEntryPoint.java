@@ -1,4 +1,4 @@
-package com.example.spring_boilerplate_stater.security;
+package com.example.spring_boilerplate_stater.security.jwt;
 
 import java.io.IOException;
 
