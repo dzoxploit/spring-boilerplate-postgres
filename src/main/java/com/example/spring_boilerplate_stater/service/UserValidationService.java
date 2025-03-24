@@ -2,6 +2,7 @@ package com.example.spring_boilerplate_stater.service;
 
 import org.springframework.stereotype.Service;
 
+import com.example.spring_boilerplate_stater.exception.RegistrationException;
 import com.example.spring_boilerplate_stater.repository.UserRepository;
 import com.example.spring_boilerplate_stater.security.dto.RegistrationRequest;
 import com.example.spring_boilerplate_stater.utils.ExceptionMessageAccessor;
@@ -38,7 +39,18 @@ public class UserValidationService {
 
         if(existsByUsername) {
             log.warn("{} is already be used", username);
-            throw new RegistrationException(existsByUsername);
+            final String existsUsername = exceptionMessageAccessor.getMessage(null, USERNAME_ALREADY_EXISTS);
+			throw new RegistrationException(existsUsername);
+        }
+    }
+
+    private void checkEmail(String email) {
+        final boolean existsByEmail = userRepository.existsByEmail(email);
+
+        if(existsByEmail) {
+            log.warn("{} is already be used", email);
+            final String existsEmail = exceptionMessageAccessor.getMessage(null, EMAIL_ALREADY_EXISTS);
+			throw new RegistrationException(existsEmail);
         }
     }
 }
