@@ -12,7 +12,6 @@ import com.example.spring_boilerplate_stater.security.jwt.JwtTokenService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
 
 
 @RestController
